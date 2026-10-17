@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const {Schema} = mongoose;
 
-const problemSchema = ({
+const problemSchema = new Schema({
 
     title:{
         type:String,
@@ -93,7 +93,7 @@ const problemSchema = ({
         ref:"user",
         required:true
     }
-})
+}, { timestamps: true })
 
 const Problem = mongoose.model("problem" , problemSchema)
 
